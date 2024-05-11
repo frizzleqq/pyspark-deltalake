@@ -18,6 +18,11 @@ requirements: .venv  ## Install/refresh Python project requirements
 	$(VENV_BIN)/python -m pip install --upgrade uv
 	$(VENV_BIN)/uv pip install --upgrade .[dev]
 
+.PHONY: build
+build:
+	$(VENV_BIN)/uv pip install build
+	$(VENV_BIN)/python -m build
+
 .PHONY: format
 format:
 	$(VENV_BIN)/ruff check $(PACKAGE) tests --fix
