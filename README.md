@@ -1,6 +1,6 @@
 # Local env with spark+delta
 
-Minimal example of a local Python setup with Spark and DeltaLake that allows locally
+Minimal example of a local Python setup with Spark and DeltaLake that allows
 unit-testing spark/delta via `pytest`.
 
 The setup is inspired by [dbx by Databricks](https://github.com/databrickslabs/dbx).
