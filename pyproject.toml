@@ -1,0 +1,54 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sparkdelta"
+version = "0.1.0"
+description = "Basic local spark setup includin delta-tables"
+readme = "README.md"
+requires-python = ">= 3.10"
+urls.homepage = "TODO"
+classifiers = [
+  "Natural Language :: English",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+]
+
+dependencies = [
+  "delta-spark>=3.2.0, <3.3.0",
+  "pyspark>=3.5.0, <3.6.0",
+]
+
+[project.optional-dependencies]
+dev = [
+  # development & testing tools
+  "mypy<2.0.0",
+  "pytest<9.0.0",
+  "ruff<0.4.0",
+]
+
+# [[tool.mypy.overrides]]
+# module = "ergast,staging,pandas,requests,requests.adapters"
+# ignore_missing_imports = true
+
+[tool.ruff]
+line-length = 88
+
+[tool.ruff.lint]
+select = [
+  "E", # pycodestyle
+  "W", # pycodestyle
+  "F", # Pyflakes
+  "I", # isort
+]
+ignore = [
+  "E501", # Line length is regulated by formatter
+]
+
+[tool.ruff.lint.pydocstyle]
+convention = "numpy"
+
+[tool.ruff.format]
+docstring-code-format = true
