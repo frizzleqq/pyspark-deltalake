@@ -53,6 +53,9 @@ The `--editable` makes the CLI script available.
 
 ### Windows
 
+**I recommend using [wsl](https://learn.microsoft.com/en-us/windows/wsl/install) instead,
+as even with the additional hadoop libraries spark-delta occasionally simply freezes.**
+
 To run this on Windows you need additional Haddop libraries, see https://cwiki.apache.org/confluence/display/HADOOP2/WindowsProblems.
 
 > "In particular, %HADOOP_HOME%\BIN\WINUTILS.EXE must be locatable."
