@@ -12,8 +12,6 @@ urls.homepage = "https://github.com/frizzleqq/pyspark-deltalake"
 classifiers = [
   "Natural Language :: English",
   "Programming Language :: Python :: 3",
-  "Programming Language :: Python :: 3.10",
-  "Programming Language :: Python :: 3.11",
 ]
 
 dependencies = [
@@ -26,7 +24,7 @@ dev = [
   # development & testing tools
   "mypy<2.0.0",
   "pytest<9.0.0",
-  "ruff<0.4.0",
+  "ruff<0.6.0",
 ]
 
 # [[tool.mypy.overrides]]
@@ -34,7 +32,7 @@ dev = [
 # ignore_missing_imports = true
 
 [tool.ruff]
-line-length = 88
+line-length = 90
 
 [tool.ruff.lint]
 select = [

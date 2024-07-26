@@ -1,10 +1,16 @@
 import logging
+import os
 import shutil
+import sys
 from typing import Generator
 
 import pytest
 from delta import configure_spark_with_delta_pip
 from pyspark.sql import SparkSession
+
+# Ensure Spark uses the same Python executable as pytest
+os.environ["PYSPARK_PYTHON"] = sys.executable
+os.environ["PYSPARK_DRIVER_PYTHON"] = sys.executable
 
 
 @pytest.fixture(scope="session")
@@ -27,7 +33,7 @@ def spark(
     # use pytest tmp_path to keep everything together
     warehouse_dir = tmp_path_factory.getbasetemp().joinpath("warehouse")
     _builder = (
-        SparkSession.builder.master("local[1]")
+        SparkSession.builder.master("local[*]")
         .config("spark.hive.metastore.warehouse.dir", warehouse_dir.as_uri())
         .config("spark.sql.extensions", "io.delta.sql.DeltaSparkSessionExtension")
         .config(
