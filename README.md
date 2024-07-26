@@ -28,9 +28,10 @@ Requirements:
 ### Setup Virtual environment
 
 Following commands create and activate a virtual environment.
-The `[dev]` also installs development tools.
-The `--editable` makes the CLI script available.
+* The `[dev]` also installs development tools.
+* The `--editable` makes the CLI script available.
 
+Commands:
 * Makefile:
     ```bash
     make requirements
@@ -40,7 +41,7 @@ The `--editable` makes the CLI script available.
     ```powershell
     python -m venv .venv
     .venv\Scripts\Activate.ps1
-    python -m pip install --upgrade pip
+    python -m pip install --upgrade uv
     pip install --editable .[dev]
     ```
 * Windows CMD:
@@ -50,6 +51,12 @@ The `--editable` makes the CLI script available.
     python -m pip install --upgrade pip
     pip install --editable .[dev]
     ```
+
+### Updating locked dependencies
+
+uv pip compile pyproject.toml -o requirements.txt
+
+uv pip compile pyproject.toml --extra dev -o requirements-dev.txt
 
 ### Windows
 
