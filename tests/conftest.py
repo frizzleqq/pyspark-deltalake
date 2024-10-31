@@ -55,3 +55,28 @@ def spark(
     spark.stop()
     if warehouse_dir.exists():
         shutil.rmtree(warehouse_dir)
+
+
+@pytest.fixture(scope="function")
+def schema_name() -> str:
+    """
+    This fixture provides schema name for testing environment.
+
+    Returns
+    -------
+        str: schema name
+    """
+    return "test_schema"
+
+
+@pytest.fixture(scope="function")
+def table_name(request) -> str:
+    """
+    This fixture provides table name for testing environment.
+    `request.node.name` is the name of the test function.
+
+    Returns
+    -------
+        str: table name
+    """
+    return request.node.name
