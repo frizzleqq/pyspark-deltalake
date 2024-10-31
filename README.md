@@ -37,17 +37,10 @@ Commands:
     make requirements
     source .venv/bin/activate
     ```
-* PowerShell:
+* Windows:
     ```powershell
     python -m venv .venv
-    .venv\Scripts\Activate.ps1
-    python -m pip install --upgrade uv
-    uv pip install --editable .[dev]
-    ```
-* Windows CMD:
-    ```
-    python -m venv .venv
-    .venv\Scripts\activate.bat
+    .venv\Scripts\activate
     python -m pip install --upgrade uv
     uv pip install --editable .[dev]
     ```

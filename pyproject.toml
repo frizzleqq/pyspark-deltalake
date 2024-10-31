@@ -40,10 +40,14 @@ select = [
   "W", # pycodestyle
   "F", # Pyflakes
   "I", # isort
+  "D", # pydocstyle
 ]
 ignore = [
   "E501", # Line length is regulated by formatter
 ]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = ["D"]
 
 [tool.ruff.lint.pydocstyle]
 convention = "numpy"
