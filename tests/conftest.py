@@ -57,16 +57,17 @@ def spark(
         shutil.rmtree(warehouse_dir)
 
 
-@pytest.fixture(scope="function")
-def schema_name() -> str:
+@pytest.fixture(scope="module")
+def schema_name(request) -> str:
     """
     This fixture provides schema name for testing environment.
+    `request.module.__name__` is the name of the module of the test function.
 
     Returns
     -------
-        str: schema name
+        str: module name of test
     """
-    return "test_schema"
+    return request.module.__name__
 
 
 @pytest.fixture(scope="function")
@@ -77,6 +78,6 @@ def table_name(request) -> str:
 
     Returns
     -------
-        str: table name
+        str: test name
     """
     return request.node.name
