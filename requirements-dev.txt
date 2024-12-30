@@ -6,25 +6,25 @@ importlib-metadata==8.5.0
     # via delta-spark
 iniconfig==2.0.0
     # via pytest
-mypy==1.13.0
+mypy==1.14.0
     # via sparkdelta (pyproject.toml)
 mypy-extensions==1.0.0
     # via mypy
-packaging==24.1
+packaging==24.2
     # via pytest
 pluggy==1.5.0
     # via pytest
 py4j==0.10.9.7
     # via pyspark
-pyspark==3.5.3
+pyspark==3.5.4
     # via
     #   sparkdelta (pyproject.toml)
     #   delta-spark
-pytest==8.3.3
+pytest==8.3.4
     # via sparkdelta (pyproject.toml)
-ruff==0.5.7
+ruff==0.8.4
     # via sparkdelta (pyproject.toml)
 typing-extensions==4.12.2
     # via mypy
-zipp==3.20.2
+zipp==3.21.0
     # via importlib-metadata

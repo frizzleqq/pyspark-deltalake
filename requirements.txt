@@ -6,9 +6,9 @@ importlib-metadata==8.5.0
     # via delta-spark
 py4j==0.10.9.7
     # via pyspark
-pyspark==3.5.3
+pyspark==3.5.4
     # via
     #   sparkdelta (pyproject.toml)
     #   delta-spark
-zipp==3.20.2
+zipp==3.21.0
     # via importlib-metadata

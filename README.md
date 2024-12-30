@@ -51,12 +51,12 @@ To lock dependencies from `pyproject.toml` into `requirements.txt` files:
 
 * Without dev dependencies:
     ```
-    uv pip compile pyproject.toml -o requirements.txt
+    uv pip compile pyproject.toml --upgrade -o requirements.txt
     ```
 
 * With dev dependencies:
     ```
-    uv pip compile pyproject.toml --extra dev -o requirements-dev.txt
+    uv pip compile pyproject.toml --upgrade --extra dev -o requirements-dev.txt
     ```
   * We use `uv pip install` instead of `uv pip sync` to also have an editable install.
 
