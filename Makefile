@@ -34,6 +34,11 @@ lint:
 	$(VENV_BIN)/ruff format $(PACKAGE) --check
 	$(VENV_BIN)/mypy $(PACKAGE)
 
+.PHONY: pip-compile
+pip-compile:
+	$(VENV_BIN)/uv pip compile pyproject.toml --upgrade -o requirements.txt
+	$(VENV_BIN)/uv pip compile pyproject.toml --upgrade --extra dev -o requirements-dev.txt
+
 .PHONY: test
 test:
 	$(VENV_BIN)/pytest -vv
